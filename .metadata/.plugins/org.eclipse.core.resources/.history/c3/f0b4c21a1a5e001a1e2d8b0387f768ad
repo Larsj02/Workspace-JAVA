@@ -1,0 +1,18 @@
+package PArrays;
+
+public class CArrays {
+
+	static int[]Noten;
+	
+	public static void main(String[] args) {
+		System.out.println("Menü");
+		System.out.println("[1] Noten eingabe");
+		System.out.println("[2] Noten abändern");
+		System.out.println("[3] Notendurchschnitt ausgeben");
+		System.out.println("[4] Alle Noten ausgeben");
+		System.out.println("[5] Noten reseten");
+		System.out.println("");
+		System.out.println("[0] Beenden");
+	}
+
+}

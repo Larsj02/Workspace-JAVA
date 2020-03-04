@@ -1,0 +1,124 @@
+package PArrays;
+
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+public class CArrays {
+
+	static  int[] Noten;
+	static int auswahl,notenanzahl;
+	static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		do {
+			System.out.println("Menü");
+			System.out.println("[1] Noten eingabe");
+			System.out.println("[2] Noten abändern");
+			System.out.println("[3] Notendurchschnitt ausgeben");
+			System.out.println("[4] Alle Noten ausgeben");
+			System.out.println("[5] Alle Noten+durchschnitt abspeichern");
+			System.out.println("[6] Noten reseten");
+			System.out.println("");
+			System.out.println("[0] Beenden");
+			System.out.println("");
+			auswahl = scan.nextInt();
+			
+			switch (auswahl) {
+			case 1:
+				Noteneingabe();
+				break;
+			case 2:
+				Notenänderung();
+				break;
+			case 3:
+				System.out.println("Der Notendurchschnitt beträgt: "+Notendurchschnitt());
+				break;
+			case 4:
+				Notenausgabe();
+				break;
+			case 5:
+				Notenabspeichern();
+				break;
+			case 6:
+				Notenreset();
+				break;
+			case 0:
+				scan.close();
+				break;
+			}
+		} while (auswahl != 0);
+	}
+	
+	static void Notenreset(){
+		Noten = new int[0];
+	}
+	
+	static double Notendurchschnitt() {
+		double summe=0;
+		for (int i=0; i<Noten.length ; i++)
+	    {
+			summe=summe+Noten[i];
+	    }
+		return summe/Noten.length;
+	}
+	
+	
+	static void Noteneingabe() {
+		System.out.println("Wieviele Noten wollen sie eingeben ?");
+		notenanzahl = scan.nextInt();
+		int[] MNoten = new int[notenanzahl];
+		for (int i = 0; i < notenanzahl; i++) {
+			do {
+				int nr=i+1;
+		    	System.out.println("Note von Schüler Nr."+nr+": ");
+				MNoten[i] = scan.nextInt();
+			} while (MNoten[i] > 6 ||MNoten[i]<1);
+		}
+		Noten = MNoten;
+	}
+	
+	static void Notenänderung() {
+		System.out.println("Welche Note wollen sie abändern:");
+		int nr = scan.nextInt();
+		do {
+			System.out.println("zu was wollen sie die Note von Schüler Nr."+nr+" ändern?");
+			Noten[nr] = scan.nextInt();
+		} while (Noten[nr] > 6 ||Noten[nr]<1);
+	}
+	
+	static void Notenausgabe() {
+		for (int i=0; i<Noten.length ; i++)
+	    {
+	    	int nr=i+1;
+	    	System.out.println("Note von Schüler Nr."+nr+": "+Noten[i]);
+	    }
+	}
+	
+	static void Notenabspeichern() {
+		System.out.println("Wie möchten sie die Datei auf dem Desktop abspeichern:");
+		try
+		{
+		    PrintWriter pr = new PrintWriter(System.getProperty("user.home") + "/Desktop/"+scan.next());
+
+		    for (int i=0; i<Noten.length ; i++)
+		    {
+		    	int nr=i+1;
+		        pr.println("Note von Schüler Nr."+nr+": "+Noten[i]);
+		    }
+		    pr.println("");
+		    pr.println("Durchschnitt: "+Notendurchschnitt());
+		    pr.close();
+		}
+		catch (Exception e)
+		{
+		    e.printStackTrace();
+		}
+	}
+	
+	static void clear() {
+		for (int i = 0; i < 20; i++) {
+			System.out.println("");
+		}
+	}
+
+}

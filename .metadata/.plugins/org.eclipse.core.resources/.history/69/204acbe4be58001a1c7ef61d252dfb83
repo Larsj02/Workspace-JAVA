@@ -1,0 +1,9 @@
+package Pmain;
+
+public class Cmain {
+
+	public static void main(String[] args) {
+		System.out.println("ᔑʖᓵ↸ᒷ⎓⊣⍑╎⋮ꖌꖎᒲリ𝙹!¡ᑑ∷ᓭℸ ̣ ⚍⍊∴ ̇/||⨅");
+	}
+
+}

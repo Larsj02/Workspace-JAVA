@@ -1,0 +1,85 @@
+package Pmain;
+
+import java.util.Scanner;
+
+public class Cmain {
+	static Scanner scan = new Scanner(System.in);
+
+	static String text;
+
+	public static void main(String[] args) {
+		System.out.println("Text Eingeben:");
+		text = scan.nextLine();
+		clear();
+		System.out.println(replaceToNA(text));
+		System.out.println(replaceToSGA(text));
+	}
+
+	static String replaceToSGA(String text) {
+		text = text.replace("a", "ᔑ");
+		text = text.replace("b", "ʖ");
+		text = text.replace("c", "ᓵ");
+		text = text.replace("d", "↸");
+		text = text.replace("e", "ᒷ");
+		text = text.replace("f", "⎓");
+		text = text.replace("g", "⊣");
+		text = text.replace("h", "⍑");
+		text = text.replace("i", "╎");
+		text = text.replace("j", "⋮");
+		text = text.replace("k", "ꖌ");
+		text = text.replace("l", "ꖎ");
+		text = text.replace("m", "ᒲ");
+		text = text.replace("n", "リ");
+		text = text.replace("o", "𝙹");
+		text = text.replace("p", "!¡");
+		text = text.replace("q", "ᑑ");
+		text = text.replace("r", "∷");
+		text = text.replace("s", "ᓭ");
+		text = text.replace("t", "ℸ");
+		text = text.replace("u", "⚍");
+		text = text.replace("v", "⍊");
+		text = text.replace("w", "∴");
+		text = text.replace("x", "/");
+		text = text.replace("y", "||");
+		text = text.replace("z", "⨅");
+		text = text.replace(" ", "  ");
+		return text;
+	}
+
+	static String replaceToNA(String text) {
+		text = text.replace("ᔑ", "a");
+		text = text.replace("ʖ", "b");
+		text = text.replace("ᓵ", "c");
+		text = text.replace("↸", "d");
+		text = text.replace("ᒷ", "e");
+		text = text.replace("⎓", "f");
+		text = text.replace("⊣", "g");
+		text = text.replace("⍑", "h");
+		text = text.replace("╎", "i");
+		text = text.replace("⋮", "j");
+		text = text.replace("ꖌ", "k");
+		text = text.replace("ꖎ", "l");
+		text = text.replace("ᒲ", "m");
+		text = text.replace("リ", "n");
+		text = text.replace("𝙹", "o");
+		text = text.replace("!¡", "p");
+		text = text.replace("ᑑ", "q");
+		text = text.replace("∷", "r");
+		text = text.replace("ᓭ", "s");
+		text = text.replace("ℸ", "t");
+		text = text.replace("⚍", "u");
+		text = text.replace("⍊", "v");
+		text = text.replace("∴", "w");
+		text = text.replace("/", "x");
+		text = text.replace("||", "y");
+		text = text.replace("⨅", "z");
+		return text;
+	}
+	
+	static void clear() {
+		for (int i = 0; i < 25; i++) {
+			System.out.println("");
+		}
+	}
+
+}

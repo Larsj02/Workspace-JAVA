@@ -1,0 +1,24 @@
+package PQuersuhme;
+
+import java.util.Scanner;
+
+public class CKwersumme {
+	
+	static Scanner scan = new Scanner(System.in);
+	
+
+	public static void main(String[] args) {
+		
+	}
+	
+	static int QSvonZ(String zahl) {
+		int Summe=0;
+		for (int i = 0; i < zahl.length(); i++) {
+			String teil = zahl.substring(zahl.length()-i-1,zahl.length()-i);
+			int teilZahl = Integer.valueOf(teil);
+			Summe = Summe+teilZahl;
+		}
+		return Summe;
+	}
+
+}

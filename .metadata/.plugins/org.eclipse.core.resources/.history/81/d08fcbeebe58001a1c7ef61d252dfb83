@@ -1,0 +1,38 @@
+package Pmain;
+
+import java.util.ArrayList;
+
+public class Cmain {
+	public static ArrayList<String> SGA = new ArrayList<String>();
+
+	public static void main(String[] args) {
+		SGA.add("ᔑ");//a
+		SGA.add("ʖ");//b
+		SGA.add("ᓵ");//c
+		SGA.add("↸");//d
+		SGA.add("ᒷ");//e
+		SGA.add("⎓");//f
+		SGA.add("⊣");//g
+		SGA.add("⍑");//h
+		SGA.add("╎");//i
+		SGA.add("⋮");//j
+		SGA.add("ꖌ");//k
+		SGA.add("ꖎ");//l
+		SGA.add("ᒲ");//m
+		SGA.add("リ");//n
+		SGA.add("𝙹");//o
+		SGA.add("!¡");//p
+		SGA.add("ᑑ");//q
+		SGA.add("∷");//r
+		SGA.add("ᓭ");//s
+		SGA.add("ℸ ");//t
+		SGA.add("⚍");//u
+		SGA.add("⍊");//v
+		SGA.add("∴");//w
+		SGA.add("̇/");//x
+		SGA.add("||");//y
+		SGA.add("⨅");//z
+		System.out.println("");
+	}
+
+}

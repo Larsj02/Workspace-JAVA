@@ -1,0 +1,35 @@
+package PCodeknacker;
+
+public class CLarsbruteforce {
+
+	private static String Code;
+	private static StringBuilder string = new StringBuilder("");
+	private static int min = 32, max = 127;
+	
+	public static void loop(int index) {
+		for(int i = min; i < max; i++) {
+			string.setCharAt(index, (char) i);
+			if(index < string.length() - 1)
+				loop(index + 1);
+			System.out.println(string);
+			if(string.toString().equals(Code)) {
+				System.err.println("passwort gefunden: " + string);
+				System.exit(0);
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		while(true) {
+			string.append((char) min);
+		
+			for(int i = 0; i < string.length() - 1; i++) {
+				for(int j = min; j  < max; j++) {
+					string.setCharAt(i, (char) j);
+					loop(i + 1);
+				}
+			}
+		}
+	}
+
+}

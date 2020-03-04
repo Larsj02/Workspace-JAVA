@@ -1,0 +1,175 @@
+package Pmain;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Cmain {
+	static ArrayList<String> SGA = new ArrayList<String>();
+	static ArrayList<String> NA = new ArrayList<String>();
+	
+	static Scanner scan = new Scanner(System.in);
+	
+	static boolean prüfer;
+	
+	static String text;
+
+	public static void main(String[] args) {
+		SGA.add("ᔑ");//a
+		SGA.add("ʖ");//b
+		SGA.add("ᓵ");//c
+		SGA.add("↸");//d
+		SGA.add("ᒷ");//e
+		SGA.add("⎓");//f
+		SGA.add("⊣");//g
+		SGA.add("⍑");//h
+		SGA.add("╎");//i
+		SGA.add("⋮");//j
+		SGA.add("ꖌ");//k
+		SGA.add("ꖎ");//l
+		SGA.add("ᒲ");//m
+		SGA.add("リ");//n
+		SGA.add("𝙹");//o
+		SGA.add("!¡");//p
+		SGA.add("ᑑ");//q
+		SGA.add("∷");//r
+		SGA.add("ᓭ");//s
+		SGA.add("ℸ ");//t
+		SGA.add("⚍");//u
+		SGA.add("⍊");//v
+		SGA.add("∴");//w
+		SGA.add("̇/");//x
+		SGA.add("||");//y
+		SGA.add("⨅");//z
+
+		NA.add("a");
+		NA.add("b");
+		NA.add("c");
+		NA.add("d");
+		NA.add("e");
+		NA.add("f");
+		NA.add("g");
+		NA.add("h");
+		NA.add("i");
+		NA.add("j");
+		NA.add("k");
+		NA.add("l");
+		NA.add("m");
+		NA.add("n");
+		NA.add("o");
+		NA.add("p");
+		NA.add("q");
+		NA.add("r");
+		NA.add("s");
+		NA.add("t");
+		NA.add("u");
+		NA.add("v");
+		NA.add("w");
+		NA.add("x");
+		NA.add("y");
+		NA.add("z");
+		
+		System.out.println("Text Eingeben:");
+		text = scan.next();
+		prüfer = true;
+		do {
+			for (int i = 0; i < text.length(); i++) {
+				String teil = text.substring(text.length() - i - 1, text.length() - i);
+				if(CheckSGA(teil) == true && prüfer == true) {
+					prüfer = true;
+				}else {
+					prüfer = false;
+				}
+			}
+			replaceToNA(text);
+			System.out.println(text);
+		} while (prüfer == true);
+		if(prüfer == false) {
+			prüfer = true;
+			for (int i = 0; i < text.length(); i++) {
+				String teil = text.substring(text.length() - i - 1, text.length() - i);
+				if(CheckSGA(teil) == true && prüfer == true) {
+					prüfer = true;
+				}else {
+					prüfer = false;
+				}
+			}
+			replaceToNA(text);
+			System.out.println(text);
+		}
+	}
+	static void replaceToSGA(String text) {
+		text = text.replace("a", "ᔑ");
+		text = text.replace("b", "ʖ");
+		text = text.replace("c", "ᓵ");
+		text = text.replace("d", "↸");
+		text = text.replace("e", "ᒷ");
+		text = text.replace("f", "⎓");
+		text = text.replace("g", "⊣");
+		text = text.replace("h", "⍑");
+		text = text.replace("i", "╎");
+		text = text.replace("j", "⋮");
+		text = text.replace("k", "ꖌ");
+		text = text.replace("l", "ꖎ");
+		text = text.replace("m", "ᒲ");
+		text = text.replace("n", "リ");
+		text = text.replace("o", "𝙹");
+		text = text.replace("p", "!¡");
+		text = text.replace("q", "ᑑ");
+		text = text.replace("r", "∷");
+		text = text.replace("s", "ᓭ");
+		text = text.replace("t", "ℸ");
+		text = text.replace("u", "⚍");
+		text = text.replace("v", "⍊");
+		text = text.replace("w", "∴");
+		text = text.replace("x", "/");
+		text = text.replace("y", "||");
+		text = text.replace("z", "⨅");
+	}
+	
+	static void replaceToNA(String text) {
+		text = text.replace("ᔑ", "a");
+		text = text.replace("ʖ", "b");
+		text = text.replace("ᓵ", "c");
+		text = text.replace("↸", "d");
+		text = text.replace("ᒷ", "e");
+		text = text.replace("⎓", "f");
+		text = text.replace("⊣", "g");
+		text = text.replace("⍑", "h");
+		text = text.replace("╎", "i");
+		text = text.replace("⋮", "j");
+		text = text.replace("ꖌ", "k");
+		text = text.replace("ꖎ", "l");
+		text = text.replace("ᒲ", "m");
+		text = text.replace("リ", "n");
+		text = text.replace("𝙹", "o");
+		text = text.replace("!¡", "p");
+		text = text.replace("ᑑ", "q");
+		text = text.replace("∷", "r");
+		text = text.replace("ᓭ", "s");
+		text = text.replace("ℸ", "t");
+		text = text.replace("⚍", "u");
+		text = text.replace("⍊", "v");
+		text = text.replace("∴", "w");
+		text = text.replace("/", "x");
+		text = text.replace("||", "y");
+		text = text.replace("⨅", "z");
+	}
+	
+	static boolean CheckSGA(String buchstabe) {
+		for (int i = 0; i < SGA.size(); i++) {
+			if(SGA.get(i).equalsIgnoreCase(buchstabe)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	static boolean CheckNA(String buchstabe) {
+		for (int i = 0; i < NA.size(); i++) {
+			if(NA.get(i).equalsIgnoreCase(buchstabe)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+}

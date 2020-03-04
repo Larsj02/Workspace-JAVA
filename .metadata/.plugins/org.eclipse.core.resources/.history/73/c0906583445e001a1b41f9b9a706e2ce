@@ -1,0 +1,59 @@
+package PArrays;
+
+import java.util.Scanner;
+
+public class CArrays {
+
+	static int[]Noten;
+	static int auswahl,notenanzahl;
+	static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		do {
+			System.out.println("Menü");
+			System.out.println("[1] Noten eingabe");
+			System.out.println("[2] Noten abändern");
+			System.out.println("[3] Notendurchschnitt ausgeben");
+			System.out.println("[4] Alle Noten ausgeben");
+			System.out.println("[5] Noten reseten");
+			System.out.println("");
+			System.out.println("[0] Beenden");
+			System.out.println("");
+			auswahl = scan.nextInt();
+			
+			switch (auswahl) {
+			case 1:
+				Noteneingabe();
+				break;
+			case 2:
+				
+				break;
+			case 3:
+				
+				break;
+			case 4:
+				Notenausgabe();
+				break;
+			case 5:
+				
+				break;
+			}
+		} while (auswahl != 0);
+	}
+	
+	static void Noteneingabe() {
+		System.out.println("Wieviele Noten wollen sie eingeben ?");
+		notenanzahl = scan.nextInt();
+		for (int i = 0; i < notenanzahl; i++) {
+			System.out.println("Nr."+i+" Note:");
+			Noten[0] = i;
+		}
+	}
+	
+	static void Notenausgabe() {
+		for (int i : Noten) {
+			System.out.println(i);
+		}
+	}
+
+}

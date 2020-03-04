@@ -1,0 +1,29 @@
+package PCodeknacker;
+
+import java.util.Scanner;
+
+public class CCodeknacker {
+
+	static Scanner scan = new Scanner(System.in);
+	static int i,j,k,zähler;
+	static String Code, zutesten, geknackt="";
+	
+	public static void main(String[] args) {
+		System.out.println("Geben Sie den zu knackenden Code ein: ");
+		Code=scan.next();
+		for (i = 65; i <=90; i++) {
+			for (j = 65; j <=90; j++) {
+				for (k = 65; k <=90; k++) {
+					zutesten = Character.toString((char)i)+Character.toString((char)j)+Character.toString((char)k);
+					if(zutesten.contentEquals(Code)) {
+						geknackt=zutesten;
+					}
+					System.out.println(zutesten);
+				}
+			}
+		}
+		System.out.println("Der eingegebene Code war: "+geknackt);
+		scan.close();
+	}
+
+}
